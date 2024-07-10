@@ -6,8 +6,8 @@ interface CombinationCardProps {
 
 export const CombinationsCard: React.FC<CombinationCardProps> = ({ item }) => {
   return (
-    <div className="w-[350px] my-[16px] text-center p-[16px] border-[2px] border-red-200 rounded-[20px]">
-      <p>
+    <div className="w-[350px] h-[120px] text-red-400 my-[16px] p-[8px] text-center border-[1px] bg-white border-red-400 rounded-[20px] box-border">
+      <p className="text-[red] border-b-2 border-red-300 mb-[8px]">
         {item.combinationId}. {item.name}
       </p>
       <span>{item.tag.join(" ")}</span>
