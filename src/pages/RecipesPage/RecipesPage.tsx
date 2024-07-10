@@ -4,6 +4,7 @@ import { Wrapper } from "../../components/Wrapper/Wrapper";
 import { getRecipes } from "../../services/Recipes/api";
 import { IRecipe } from "../../types/RecipesTypes";
 import { RecipeCard } from "../../components/RecipeCard";
+import { Loader } from "../../components/Loader";
 
 export const RecipesPage = () => {
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
@@ -50,7 +51,7 @@ export const RecipesPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <>
           <div className="flex justify-between items-start flex-wrap">

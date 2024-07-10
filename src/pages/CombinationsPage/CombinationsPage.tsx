@@ -3,6 +3,7 @@ import { IComb } from "../../types/CombinationsTypes";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
 import { CombinationsCard } from "../../components/CombinationCard";
 import { getCombinations } from "../../services/Combinations/api";
+import { Loader } from "../../components/Loader";
 
 export const CombinationsPage = () => {
   const [combinations, setCombinations] = useState<IComb[]>([]);
@@ -45,7 +46,7 @@ export const CombinationsPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h3>Loading...</h3>
+        <Loader />
       ) : (
         <>
           <div className="flex justify-between items-start flex-wrap">

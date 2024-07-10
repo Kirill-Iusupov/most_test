@@ -6,11 +6,11 @@ interface FactCard {
 
 export const FactCard: React.FC<FactCard> = ({ fact }) => {
   return (
-    <div className="w-[350px] my-[16px] text-center p-[16px] border-[2px] border-red-200 rounded-[20px]">
-      <p>
+    <div className="w-[350px] h-[180px] my-[16px] p-[8px] text-center hover:border-[1px] hover:border-red-400 hover:rounded-[20px] box-border">
+      <p className="text-red-500">
         {fact.factId}. {fact.title}
       </p>
-      <span>{fact.description}</span>
+      <span className="text-[14px]">{fact.description}</span>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Wrapper } from "../../components/Wrapper/Wrapper";
 import { IDate } from "../../types/HistoryTypes";
 import { getHistory } from "../../services/History/api";
 import { HistoryCard } from "../../components/HistoryCard/HistoryCard";
+import { Loader } from "../../components/Loader";
 
 export const HistoryPage = () => {
   const [dates, setDates] = useState<IDate[]>([]);
@@ -46,7 +47,7 @@ export const HistoryPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h3>Loading...</h3>
+        <Loader />
       ) : (
         <>
           <div className="flex justify-between items-start flex-wrap">

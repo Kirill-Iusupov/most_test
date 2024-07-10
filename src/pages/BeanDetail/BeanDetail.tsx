@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getBeanById } from "../../services/Beans/api";
 import { IBean } from "../../types/BeansTypes";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
+import { Loader } from "../../components/Loader";
 
 export const BeanDetail = () => {
   const { id } = useParams<string>();
@@ -27,7 +28,7 @@ export const BeanDetail = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : (
         <>
           <div className="flex">

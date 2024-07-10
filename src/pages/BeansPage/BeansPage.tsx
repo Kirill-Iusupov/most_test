@@ -3,6 +3,7 @@ import { getBeans } from "../../services/Beans/api";
 import { IBean } from "../../types/BeansTypes";
 import { BeanCard } from "../../components/BeanCard";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
+import { Loader } from "../../components/Loader";
 
 export const BeansPage = () => {
   const [beans, setBeans] = useState<IBean[]>([]);
@@ -46,7 +47,7 @@ export const BeansPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h3>Loading...</h3>
+        <Loader />
       ) : (
         <>
           <div className="flex justify-between items-start flex-wrap">

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { IRecipe } from "../../types/RecipesTypes";
 import { getRecipeById } from "../../services/Recipes/api";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
+import { Loader } from "../../components/Loader";
 
 export const RecipeDetailPage = () => {
   const { id } = useParams<string>();
@@ -19,7 +20,7 @@ export const RecipeDetailPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <div className="w-[900px] bg-[white] border-2 border-red-200 rounded-[20px] p-[24px] m-auto my-[16px]">
           <h2>{recipe?.name}</h2>

@@ -3,6 +3,7 @@ import { IFact } from "../../types/FactsTypes";
 import { getFacts } from "../../services/Facts/api";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
 import { FactCard } from "../../components/FactCard";
+import { Loader } from "../../components/Loader";
 
 export const FactsPage = () => {
   const [facts, setFacts] = useState<IFact[]>([]);
@@ -45,7 +46,7 @@ export const FactsPage = () => {
   return (
     <Wrapper>
       {isLoading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <div className="flex justify-between items-start flex-wrap">
           {facts?.map((fact) => (
